@@ -11,22 +11,13 @@ let generateBtn = document.getElementById("generate");
 generateBtn.onclick = function() {
     let characters = alpha;
     if (NumberData.checked) {
-        characters += numbers
+        characters += numbers;
     }
     if (SymbolsData.checked) {
         characters += symbols
     }
     passwordTxt.value = generatePassword(length.value, characters);
 };
-
-
-// function sizeOflenght() {
-//     if (characters.length>20)
-//     {
-//         document.
-//     }
-// }
-
 
 function generatePassword(length, characters) {
     let password = "";
@@ -37,7 +28,6 @@ function generatePassword(length, characters) {
     }
     return password;
 };
-
 
 // Copy Output
 
@@ -50,6 +40,5 @@ function passwordResult() {
         navigator.clipboard.writeText(copyText.value);
         alert("Password Copied To Clipboard");
     }
-
 
 }
