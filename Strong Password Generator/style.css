@@ -5,42 +5,66 @@
     font-family: monospace;
 }
 
+html,
+body,
+button,
+div,
+p,
+h1,
+img,
+input {
+    -webkit-tap-highlight-color: transparent;
+}
+
 body {
     max-width: 1600px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 5vw;
 }
 
 #random-password {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
+    justify-content: center;
+    align-items: inherit;
 }
 
 .result {
-    margin: 50px 50px;
-    font-size: 50px;
+    margin: 0 auto;
+    font-size: 5vw;
     padding: 10px;
     max-height: 250px;
-    max-width: 500px;
+    max-width: 862px;
     text-align: center;
     border-radius: 20px;
     border: 1px solid black;
     outline: none;
+    display: flex;
+    margin-top: 54px;
+    margin-bottom: 50px;
 }
 
 button {
     color: black;
-    font-size: 20px;
+    font-size: 4vw;
     margin-top: 10px;
     padding: 10px;
     background-color: blanchedalmond;
     border: 0;
     border-radius: 20px 0 20px 0;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 50px;
 }
 
 button:hover {
     background-color: rgb(255, 102, 0);
     cursor: pointer;
-    font-size: 25px;
+    font-size: 4vw;
     transition: 0.5s;
 }
 
@@ -49,4 +73,25 @@ button:hover {
     display: flex;
     flex-direction: row;
     gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.output {
+    display: flex;
+    flex-direction: column;
+}
+
+.output button {
+    margin: 0 auto;
+    font-size: 2vw;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: rgb(17, 248, 198);
+}
+
+.output button:hover {
+    background-color: green;
 }
