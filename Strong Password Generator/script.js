@@ -16,8 +16,14 @@ generateBtn.onclick = function() {
     if (SymbolsData.checked) {
         characters += symbols
     }
-    passwordTxt.value = generatePassword(length.value, characters);
+    inputSize();
+    if (length.value >= 64) {
+        alert("please choose a lenght under 64");
+    } else {
+        passwordTxt.value = generatePassword(length.value, characters);
+    }
 };
+
 
 function generatePassword(length, characters) {
     let password = "";
@@ -28,7 +34,6 @@ function generatePassword(length, characters) {
     }
     return password;
 };
-
 // Copy Output
 
 function passwordResult() {
