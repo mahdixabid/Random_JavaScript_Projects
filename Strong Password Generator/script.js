@@ -16,10 +16,10 @@ generateBtn.onclick = function() {
         characters += symbols
     }
     if (length.value >= 64) {
-        alert("please choose a lenght under 64");
+        alert("please choose a length under 64");
     }
     if (length.value < 6) {
-        alert("please choose a lenght over 6");
+        alert("please choose a length over 6");
     } else {
         passwordTxt.value = generatePassword(length.value, characters);
     }
