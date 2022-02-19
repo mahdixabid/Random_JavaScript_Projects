@@ -6,6 +6,7 @@ let length = document.getElementById("length");
 let NumberData = document.getElementById("numbers");
 let SymbolsData = document.getElementById("symbols");
 let generateBtn = document.getElementById("generate");
+triggerBtn();
 generateBtn.onclick = function() {
     let characters = alpha;
     if (NumberData.checked) {
@@ -46,4 +47,14 @@ function passwordResult() {
         alert("Password Copied To Clipboard");
     }
 
+}
+//trigger the button enter on click
+function triggerBtn() {
+    let length = document.getElementById("length");
+    length.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("generate").click();
+        }
+    });
 }
