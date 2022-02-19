@@ -18,6 +18,7 @@ input {
 
 body {
     max-width: 1600px;
+    margin: auto;
 }
 
 h1 {
