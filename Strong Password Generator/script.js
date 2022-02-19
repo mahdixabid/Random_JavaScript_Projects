@@ -6,8 +6,6 @@ let length = document.getElementById("length");
 let NumberData = document.getElementById("numbers");
 let SymbolsData = document.getElementById("symbols");
 let generateBtn = document.getElementById("generate");
-
-
 generateBtn.onclick = function() {
     let characters = alpha;
     if (NumberData.checked) {
