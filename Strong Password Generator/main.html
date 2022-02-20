@@ -11,34 +11,48 @@
 </head>
 
 <body>
-    <div id="random-password">
-        <h1>Strong Password Generator</h1>
-        <div class="output">
-            <input class="result" type="text" id="password" />
-            <button id="passwordResult" onclick="passwordResult()">Copy Password</button>
-        </div>
+
+    <main>
+        <header>
+            <img src="./key.png" width="80px" height="80px">
+            <h1>Strong Password Generator</h1>
+        </header>
+
 
         <div id="settings">
             <div class="lenght">
-                <label for="length">Length</label>
-                <input type="number" id="length" value="16" min="8" max="64" />
+                <label for="length"><span>Length</span></label>
+                <input type="number" id="length" value="16" min="8" max="63" />
             </div>
             <div class="numbers">
-                <label for="numbers">Include Numbers</label>
-                <input type="checkbox" id="numbers" />
+                <span>Include Numbers</span>
+                <div class="numbers checkboxStyle">
+                    <input type="checkbox" id="numbers" />
+                    <label for="numbers"></label>
+                </div>
             </div>
             <div class="symbols">
-                <label for="symbols">Include Symbols</label>
-                <input type="checkbox" id="symbols" />
+                <span>Include Symbols</span>
+                <div class="symbols checkboxStyle">
+                    <input type="checkbox" id="symbols" />
+                    <label for="symbols"></label>
+                </div>
             </div>
         </div>
-        <button onclick="generate" id="generate">Generate Password</button>
-    </div>
 
-    <footer style="float: right;">
-        Created By <a href="http://www.github.com/mahdixabid">YuRi.exe</a>
-    </footer>
-    
+        </div>
+        <div id="random-password">
+            <div class="output">
+                <input class="result" placeholder="Your new password will appear here." type="text" id="password" />
+                <button onclick="generate" id="generate">Generate Password</button>
+                <button id="passwordResult" onclick="passwordResult()">Copy Password</button>
+            </div>
+            <footer style="text-align: right;">
+                Created By <a href="http://www.github.com/mahdixabid">YuRi.exe</a>
+            </footer>
+    </main>
+
+
     <script src="./script.js"></script>
 </body>
 
