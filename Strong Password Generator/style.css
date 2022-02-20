@@ -17,13 +17,34 @@ input {
 }
 
 body {
-    max-width: 1600px;
+    position: relative;
+    background-color: #222222;
+}
+
+main {
+    padding: 50px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 1000px;
+    min-height: 400px;
+    background-color: wheat;
+    border-radius: 10px;
     margin: auto;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.37);
 }
 
 h1 {
     text-align: center;
-    font-size: 5vw;
+    font-size: 35px;
 }
 
 #random-password {
@@ -36,12 +57,11 @@ h1 {
 
 .result {
     margin: 0 auto;
-    font-size: 5vw;
+    font-size: 16px;
     padding: 10px;
     max-height: 250px;
-    max-width: 862px;
-    text-align: center;
-    border-radius: 20px;
+    width: 577px;
+    border-radius: 10px;
     border: 1px solid black;
     outline: none;
     display: flex;
@@ -49,30 +69,15 @@ h1 {
     margin-bottom: 50px;
 }
 
-button {
-    color: black;
-    font-size: 4vw;
-    margin-top: 10px;
-    padding: 10px;
-    background-color: blanchedalmond;
-    border: 0;
-    border-radius: 20px 0 20px 0;
-    width: 50%;
-    margin: 0 auto;
-    margin-top: 50px;
-}
-
-button:hover {
-    background-color: rgb(255, 102, 0);
-    cursor: pointer;
-    font-size: 4vw;
-    transition: 0.5s;
+::placeholder {
+    font-size: 20px;
 }
 
 #settings {
+    padding-top: 50px;
     font-size: 15px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
@@ -80,19 +85,113 @@ button:hover {
 
 .output {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
 }
 
 .output button {
-    margin: 0 auto;
-    font-size: 2vw;
-    width: 30%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    background-color: rgb(17, 248, 198);
+    width: 150px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.459);
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .output button:hover {
-    background-color: green;
+    background-color: #55524f69;
+    transition: .3s;
+    letter-spacing: 1px;
+}
+
+#generate {
+    width: 150px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.459);
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#generate:hover {
+    background-color: #55524f69;
+    transition: .3s;
+    letter-spacing: 1px;
+}
+
+.lenght input {
+    width: 50px;
+    height: 25px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.checkboxStyle {
+    width: 78px;
+    height: 26px;
+    background: #333;
+    margin: 20px;
+    position: relative;
+    border-radius: 50px;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.2);
+}
+
+.checkboxStyle:after {
+    content: 'OFF';
+    color: #000;
+    position: absolute;
+    right: 10px;
+    z-index: 0;
+    font: 12px/26px Arial, sans-serif;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, .15);
+}
+
+.checkboxStyle:before {
+    content: 'ON';
+    color: #27ae60;
+    position: absolute;
+    left: 10px;
+    z-index: 0;
+    font: 12px/26px Arial, sans-serif;
+    font-weight: bold;
+}
+
+.checkboxStyle label {
+    display: block;
+    width: 34px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    z-index: 1;
+    background: #fcfff4;
+    background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.checkboxStyle input[type=checkbox] {
+    visibility: hidden;
+}
+
+.checkboxStyle input[type=checkbox]:checked+label {
+    left: 43px;
+}
+
+.numbers,
+.symbols {
+    display: flex;
+    align-items: center;
+}
+
+span {
+    font-size: 20px;
+}
+
+.checkboxStyle input {
+    margin-left: -250px;
 }
