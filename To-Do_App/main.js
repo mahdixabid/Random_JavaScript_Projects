@@ -1,10 +1,20 @@
+console.clear()
 let input = document.getElementById("input")
 let add = document.getElementById("add")
 let taskDiv = document.getElementById("tasks")
+let delAll = document.getElementById('deleteAll')
 var ArrayData = []
 if (window.localStorage.getItem('tasks')) {
     var ArrayData = JSON.parse(localStorage.getItem('tasks'));
+    delAll.style.display="block"
 }
+delAll.addEventListener('click', function(){
+    var check;
+    if (confirm("Are you sure you want to delete all data ?")) {
+      window.localStorage.clear();
+      location.reload();
+    }
+})
 showData()
 add.addEventListener('click', function () {
     if (input.value != "") {
@@ -23,6 +33,20 @@ taskDiv.addEventListener('click', function (e) {
     if (e.target.classList.contains("del")) {
         e.target.parentElement.remove()
     }
+    // Done tasks
+    if (e.target.classList.contains("task")) {
+        toggleStatus(e.target.getAttribute("data-id"));
+        e.target.classList.toggle('done')
+    }
+    //Update Element
+    // if(e.target.classList.contains("task")) {
+    //     var update = add
+    //     update.value = "Update"
+    //     input.value = e.target.innerText
+    //     update.addEventListener('click', function(){
+    //          UpdateData(input.value)
+    //     })
+    // }
 })
 
 function NewTask(taskText) {
@@ -37,8 +61,8 @@ function NewTask(taskText) {
 
     //Local Storage Save
     saveData(ArrayData)
+    location.reload()
 }
-
 function AddTasks(e) {
     taskDiv.innerHTML = "";
     e.forEach(function (task) {
@@ -66,7 +90,6 @@ function showData() {
         AddTasks(tasks);
     }
 }
-
 function deleteData(elementID) {
     // checking ids of elements
     // for (let i = 0; i < ArrayData.length; i++) {
@@ -75,5 +98,14 @@ function deleteData(elementID) {
     //     }
     // }
     ArrayData = ArrayData.filter((task) => task.id != elementID);
+    saveData(ArrayData)
+    location.reload()
+}
+function toggleStatus(elementID) {
+    for (let i = 0; i < ArrayData.length; i++) {
+        if(ArrayData[i].id == elementID) {
+            ArrayData[i].completed == false ? (ArrayData[i].completed = true) : (ArrayData[i].completed = false)
+        }
+    }
     saveData(ArrayData)
 }
